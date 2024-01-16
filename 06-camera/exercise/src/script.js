@@ -80,6 +80,7 @@ const tick = () =>
     mesh.rotation.y = elapsedTime; */
 
     // Update controls
+    controls.update()
 
     // Render
     renderer.render(scene, camera)
