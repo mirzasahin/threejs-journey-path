@@ -1,0 +1,19 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    overflow: hidden; /* If you scroll down when the orbitcontrols is false, you will see white space on the below of the page. To not see it, we code this line. */
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: 5px red;
+}
