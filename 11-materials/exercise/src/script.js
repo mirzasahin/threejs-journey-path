@@ -29,7 +29,7 @@ const doorHeightTexture = textureLoader.load('./textures/door/height.jpg')
 const doorNormalTexture = textureLoader.load('./textures/door/normal.jpg')
 const doorMetalnessTexture = textureLoader.load('./textures/door/metalness.jpg')
 const doorRoughnessTexture = textureLoader.load('./textures/door/roughness.jpg')
-const matcapTexture = textureLoader.load('./textures/matcaps/9.png')
+const matcapTexture = textureLoader.load('./textures/matcaps/8.png')
 const gradientTexture = textureLoader.load('./textures/gradients/5.jpg')
 
 doorColorTexture.colorSpace = THREE.SRGBColorSpace
@@ -54,10 +54,10 @@ const material = new THREE.MeshNormalMaterial()
 material.wireframe = true
 material.flatShading = true */
 
-/* // MeshMatcapMaterial
+// MeshMatcapMaterial
 const material = new THREE.MeshMatcapMaterial()
 material.matcap = matcapTexture
- */
+
 
 /* // MeshDepthMaterial
 const material = new THREE.MeshDepthMaterial() */
@@ -97,9 +97,9 @@ gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001) */
 
 // MeshPhysicalMaterial
-const material = new THREE.MeshPhysicalMaterial()
+/* const material = new THREE.MeshPhysicalMaterial()
 material.metalness = 0
-material.roughness = 0
+material.roughness = 0 */
 /* material.map = doorColorTexture
 material.aoMap = doorAmbientOcclusionTexture
 material.aoMapIntensity = 1
@@ -112,9 +112,9 @@ material.normalScale.set(0.5, 0.5)
 material.transparent = true
 material.alphaMap = doorAlphaTexture */
 
-gui.add(material, 'metalness').min(0).max(1).step(0.0001)
+/* gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001)
-
+ */
 // Clearcoat
 /* material.clearcoat = 1
 material.clearcoatRoughness = 0
@@ -142,22 +142,14 @@ gui.add(material.iridescenceThicknessRange, '0').min(1).max(1000).step(1)
 gui.add(material.iridescenceThicknessRange, '1').min(1).max(1000).step(1) */
 
 // Transmission
-material.transmission = 1
+/* material.transmission = 1
 material.ior = 1.5
 material.thickness = 0.5
 
 gui.add(material, 'transmission').min(0).max(1).step(0.0001)
 gui.add(material, 'ior').min(0).max(10).step(0.0001)
 gui.add(material, 'thickness').min(0).max(1).step(0.0001)
-
-
-
-
-
-
-
-
-
+ */
 
 const torus = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.15, 64, 64), material);
 const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 64, 64), material);
