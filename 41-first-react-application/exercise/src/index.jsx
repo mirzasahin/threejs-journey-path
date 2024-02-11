@@ -1,15 +1,16 @@
 import './style.css'
 import { createRoot } from 'react-dom/client'
 import './style.css'
+import App from './App'
 
 const root = createRoot(document.querySelector('#root'))
 
-const toto = true
-const color = 'green'
-
 root.render(
     <>
-        <h1 style={ { color: color, backgroundColor: 'pink' } } >Hello</h1>
-        <p className='cute-paragraph'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, maiores, iure quae quos aliquid similique rem mollitia repellendus excepturi non eveniet vero deserunt? Eaque, laboriosam. Ipsam nesciunt laudantium sapiente sint.</p>
+    <App clickersCount = { 4 }>
+        <h1>My First React App</h1>
+        <h2>And a fancy subtitle</h2>
+    </App>
+
     </>
 )
