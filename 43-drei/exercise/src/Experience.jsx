@@ -4,6 +4,10 @@ import {
   PivotControls,
   Html,
   Text,
+  Float,
+  MeshReflectorMaterial,
+  Stars,
+  Sky,
 } from "@react-three/drei";
 import { useRef } from "react";
 
@@ -38,19 +42,30 @@ export default function Experience() {
       <TransformControls object={cube} mode="translate" /> {/* Rotate, Scale */}
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
-        <meshStandardMaterial color="greenyellow" />
+        {/* <meshStandardMaterial color="greenyellow" /> */}
+        <MeshReflectorMaterial
+          resolution={512}
+          blur={[1000, 1000]}
+          mixBlur={1}
+          mirror={ 0.5 }
+          color="greenyellow"
+        />
       </mesh>
-      
-      <Text
-        color="salmon"
-        font="./Bangers-Regular.ttf"
-        position-y={2}
-        maxWidth={2}
-        textAlign="center"
-      >
-        hello world!
-        {/* <meshNormalMaterial /> */}
-      </Text>
+
+      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+
+      <Float speed={5} floatIntensity={3}>
+        <Text
+          color="salmon"
+          font="./Bangers-Regular.ttf"
+          position-y={2}
+          maxWidth={2}
+          textAlign="center"
+        >
+          hello world!
+          {/* <meshNormalMaterial /> */}
+        </Text>
+      </Float>
     </>
   );
 }
